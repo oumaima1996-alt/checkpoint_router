@@ -1,8 +1,16 @@
 import React from 'react'
 import './MovieCard.css'
 import Rating from '../Components/Rating'
+import {Link} from "react-router-dom";
+import {moviesData} from './MoviesData'
+import {BrowserRouter as Router} from 'react-router-dom'
+import {Route, Switch, useParams} from 'react-router-dom'
 
-const MovieCard = ({el,name , url1 , rate , id}) => {
+const MovieCard = ({el}) => {
+  // const x = props.location
+  // const y = props.history
+  // let { id } = useParams();
+  // let text = x.state.moviesData[parseInt(id, 10)]
     return (
         <div>
             
@@ -20,15 +28,28 @@ const MovieCard = ({el,name , url1 , rate , id}) => {
       <p class="type">Action, Crime, Fantasy</p>
     </div>
     <div class="movie_desc">
-      <p class="text">
+      {/* <p class="text">
         {el.discription} 
-      </p>
+      </p> */}
+
+<Link to={{pathname:`/description/${el.id}`, 
+                                state:{
+                                    moviesData
+                                }
+                                }}><h5 className="linkDescription">go to description</h5></Link>
     </div>
     <div class="movie_social">
       <ul>
         <li><i class="material-icons">share</i></li>
         <li> <Rating rate = {el.rate} /></li>
-        <li><i class="material-icons">Watch trailer</i></li>
+        {/* <li><i class="material-icons">Watch trailer</i></li> */}
+        {/* <Link to={{pathname:`/trailer/${text.id}`, 
+                        state:{
+                            moviesData
+                        }
+                        }}>
+                <button className="btn-trailer draw-border">Watch Trailer</button>
+            </Link> */}
       </ul>
     </div>
   </div>
