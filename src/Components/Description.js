@@ -5,7 +5,7 @@ import {Route, Link,Switch, useParams} from 'react-router-dom'
 import Rating from './Rating'
 import Trailer from './Trailer'
 import {moviesData} from './MoviesData'
-//import './DescriptionCard.css'
+import './Description.css'
 
 const Description = (props) => {
 
